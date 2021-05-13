@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://48p1r2roz4.sse.codesandbox.io",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
