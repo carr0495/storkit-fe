@@ -1,28 +1,58 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// color app logo #24DB83
+//secondary : #FF4E00
+//third : #F5BB00
+import Home from "./pages/Home";
 
-const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
-  cache: new InMemoryCache(),
-});
-
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { AuthProvider } from "./context/auth";
 function App() {
+  const theme = React.useMemo(() =>
+    createMuiTheme({
+      palette: {
+        type: "dark",
+      },
+    })
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <div className="App" style={{ backgroundColor: "#303030" }}>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <div>
+              {/* <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/users">Users</Link>
+              </li>
+            </ul>
+          </nav> */}
+
+              {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+              <Switch>
+                {/* <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/users">
+              <Users />
+            </Route> */}
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </div>
+          </Router>
+        </ThemeProvider>
+      </div>
+    </AuthProvider>
   );
 }
 
