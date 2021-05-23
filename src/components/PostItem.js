@@ -82,8 +82,10 @@ function PostItem({ post, username }) {
 
   async function executeDelete(id) {
     console.log(id);
-    await deletePost({ variables: { postId: id } });
-    window.location.reload();
+    if (window.confirm("Are you sure you want to delete?")) {
+      await deletePost({ variables: { postId: id } });
+      window.location.reload();
+    }
   }
 
   function Like(id) {
@@ -131,12 +133,19 @@ function PostItem({ post, username }) {
       <div className={classes.iconBox}>
         {username ? (
           <>
-            {" "}
-            <Badge badgeContent={post.likeCount} color="default">
-              <IconButton onClick={() => Like(post.id)}>
-                <ThumbUpAltIcon />
-              </IconButton>
-            </Badge>
+            {post.likes.find((like) => like.username === username) ? (
+              <Badge badgeContent={post.likeCount} color="primary">
+                <IconButton onClick={() => Like(post.id)}>
+                  <ThumbUpAltIcon />
+                </IconButton>
+              </Badge>
+            ) : (
+              <Badge badgeContent={post.likeCount} color="default">
+                <IconButton onClick={() => Like(post.id)}>
+                  <ThumbUpAltIcon />
+                </IconButton>
+              </Badge>
+            )}
             <Badge badgeContent={post.commentCount} color="default">
               <IconButton onClick={flipCommentStatus}>
                 <CommentIcon />
