@@ -172,7 +172,7 @@ function LoginRegister(props) {
             </Typeography>
             <form onSubmit={onSubmit} noValidate>
               <TextField
-                id="standard-password-input"
+                id="standard-input"
                 label="Username"
                 autoComplete="username"
                 name="username"
@@ -180,7 +180,7 @@ function LoginRegister(props) {
                 style={{ width: "90%", margin: 10 }}
               />
               <TextField
-                id="standard-password-input"
+                id="standard-input"
                 label="Email"
                 type="email"
                 name="email"
@@ -234,17 +234,8 @@ function LoginRegister(props) {
           aria-label="outlined primary button group"
           style={{ margin: 60 }}
         >
-          <Button
-            style={login ? { color: "#24DB83" } : { color: "white" }}
-            onClick={handleLoginClick}
-          >
-            Login
-          </Button>
-          <Button
-            style={login ? { color: "white" } : { color: "#24DB83" }}
-            onClick={handleLoginClick}
-          >
-            Register
+          <Button style={{ color: "#24DB83" }} onClick={handleLoginClick}>
+            {login ? "Register Page" : "Login Page"}
           </Button>
         </ButtonGroup>
       </div>
