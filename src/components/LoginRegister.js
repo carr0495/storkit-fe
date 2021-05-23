@@ -176,6 +176,7 @@ function LoginRegister(props) {
                 label="Username"
                 autoComplete="username"
                 name="username"
+                value={registerValues.username}
                 onChange={onChange}
                 style={{ width: "90%", margin: 10 }}
               />
@@ -184,6 +185,7 @@ function LoginRegister(props) {
                 label="Email"
                 type="email"
                 name="email"
+                value={registerValues.email}
                 onChange={onChange}
                 style={{ width: "90%", margin: 10 }}
               />
@@ -192,6 +194,7 @@ function LoginRegister(props) {
                 label="Password"
                 type="password"
                 name="password"
+                value={registerValues.password}
                 onChange={onChange}
                 autoComplete="new-password"
                 style={{ width: "90%", margin: 10 }}
@@ -202,6 +205,7 @@ function LoginRegister(props) {
                 type="password"
                 autoComplete="new-password"
                 name="confirmPassword"
+                value={registerValues.confirmPassword}
                 onChange={onChange}
                 style={{ width: "90%", margin: 10 }}
               />
