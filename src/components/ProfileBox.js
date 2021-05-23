@@ -7,7 +7,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
-import { useQuery, useMutation, gql } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { AuthContext } from "../context/auth";
 import TextField from "@material-ui/core/TextField";
 
@@ -80,7 +80,7 @@ function ProfileBox({ user }) {
     variables: { userId },
   });
 
-  const [createPost, { createError }] = useMutation(CREATE_POST, {
+  const [createPost] = useMutation(CREATE_POST, {
     update(proxy, result) {
       console.log(result);
       const proxyData = proxy.readQuery({

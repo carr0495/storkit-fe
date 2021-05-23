@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
@@ -35,7 +34,7 @@ export default function Comments({ comments, postId }) {
     body: "",
   });
 
-  const [createComment, { commentErrors }] = useMutation(CREATE_COMMENT, {
+  const [createComment] = useMutation(CREATE_COMMENT, {
     update(proxy, result) {
       const proxyData = proxy.readQuery({
         query: ALL_POSTS,

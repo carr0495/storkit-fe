@@ -56,12 +56,12 @@ const useStyles = makeStyles((theme) => ({
 function PostItem({ post, username }) {
   const classes = useStyles();
   const [showComments, setShowComments] = useState(false);
-  const [deletePost, { errors }] = useMutation(DELETE_POST, {
+  const [deletePost] = useMutation(DELETE_POST, {
     update(_, data) {
       console.log(data);
     },
   });
-  const [setLikes, { likeErrors }] = useMutation(SET_LIKES, {
+  const [setLikes] = useMutation(SET_LIKES, {
     update(proxy, result) {
       const proxyData = proxy.readQuery({
         query: ALL_POSTS,

@@ -7,10 +7,9 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 
 import { AuthContext } from "../context/auth";
-import RandomEmoji from "./RandomEmoji";
 
 import { LOGIN_USER, RESGISTER_USER } from "../util/graphql";
 

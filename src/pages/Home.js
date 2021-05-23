@@ -12,7 +12,6 @@ import LoginRegister from "../components/LoginRegister";
 import ProfileBox from "../components/ProfileBox";
 
 import { AuthContext } from "../context/auth";
-import { Typography } from "@material-ui/core";
 
 import { ALL_POSTS } from "../util/graphql";
 
