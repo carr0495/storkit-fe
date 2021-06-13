@@ -26,8 +26,9 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#303030",
     width: "90%",
     margin: 10,
-    borderRadius: 15,
-    boxShadow: "inset 0 0 15px black",
+    borderRadius: "50px",
+    background: "linear-gradient(145deg, #3b3b3b, #474747)",
+    boxShadow: "16px 16px 32px #383838, -16px -16px 32px #4c4c4c",
     justifyContent: "center",
     flexWrap: "wrap",
     textAlign: "center",
@@ -47,8 +48,12 @@ const styles = makeStyles((theme) => ({
   },
   button: {
     margin: 20,
-    backgroundColor: "#FF4E00",
+    borderRadius: "10px",
+    background: "linear-gradient(145deg, #474747, #3b3b3b)",
+    boxShadow: "1px 1px 1px #2e2e2e,-1px -1px 1px #565656",
     fontWeight: "bolder",
+    marginLeft: "30%",
+    marginRight: "30%",
   },
   textBox: {
     width: "75%",
@@ -57,9 +62,13 @@ const styles = makeStyles((theme) => ({
   postFormArea: {
     width: "90%",
     // border: "1px solid #24DB83",
-    borderRadius: 15,
-    backgroundColor: "#424242",
-    boxShadow: "0px -5px 3px #232323",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    borderRadius: "50px",
+    background: "linear-gradient(145deg, #474747, #3b3b3b)",
+    boxShadow: "2px 2px 0px #2e2e2e,-2px -2px 0px #565656",
+    margin: "20px",
   },
 }));
 

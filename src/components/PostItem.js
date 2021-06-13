@@ -16,13 +16,18 @@ import { useMutation } from "@apollo/client";
 import { DELETE_POST, SET_LIKES, ALL_POSTS } from "../util/graphql";
 
 import Comments from "../components/Comments";
+import { graphqlSync } from "graphql";
 
 const useStyles = makeStyles((theme) => ({
   base: {
     display: "flex",
     flexWrap: "wrap",
-    width: "100%",
+    width: "90%",
     height: "auto",
+    borderRadius: "10px",
+    background: "#424242",
+    boxShadow: "5px 5px 10px #333333,-5px -5px 10px #444444",
+    margin: "5%",
   },
   userContainer: {
     display: "flex",
@@ -33,23 +38,28 @@ const useStyles = makeStyles((theme) => ({
   postHeader: {
     // width: "100%",
     borderBottom: "1px solid #24DB83",
-    marginLeft: 5,
+    marginLeft: 15,
+    marginRight: 15,
+    // textAlign: "center",
+    color: "#919191",
   },
   postBody: {
     width: "100%",
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 5,
+    color: "#888888",
   },
   iconBox: {
     display: "flex",
     justifyContent: "space-around",
     width: "100%",
-    margin: 10,
-    padding: 10,
-    backgroundColor: "#303030",
-    borderRadius: 15,
-    boxShadow: "inset 0 0 15px black",
+    margin: 20,
+    padding: 15,
+    // borderTop: "1px solid #999999",
+    borderRadius: "15px",
+    background: "#424242",
+    boxShadow: "inset 6px 6px 8px #2f2f2f,inset -6px -6px 8px #555555",
   },
 }));
 
@@ -121,7 +131,11 @@ function PostItem({ post, username }) {
             <RandomEmoji />
           </Avatar>
         )}
-        <Typography variant="h5" component="h3" style={{ marginLeft: 10 }}>
+        <Typography
+          variant="h5"
+          component="h3"
+          style={{ marginLeft: 10, color: "#999999" }}
+        >
           {post.username}
         </Typography>
       </div>
