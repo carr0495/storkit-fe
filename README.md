@@ -14,5 +14,6 @@ I built this app with the idea of giving people a place to talk about sotcks and
 - ability to switch between stock market chat and Crypto chat
 - a live chat section for people to discuss daily plays
 - tags for stock categories (penny stocks, DD, Catalyst etc..)
+- like comments and delete comments
 
 # Thanks for looking!
