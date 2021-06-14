@@ -75,7 +75,13 @@ function Home(props) {
           {user ? (
             ""
           ) : (
-            <p style={{ textAlign: "center", color: "black" }}>
+            <p
+              style={{
+                textAlign: "center",
+                color: "#888888",
+                fontWeight: "bolder",
+              }}
+            >
               please login to start interacting with posts
             </p>
           )}
